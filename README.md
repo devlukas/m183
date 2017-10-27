@@ -5,12 +5,12 @@
 A PHP/Javascript-App demonstrating two XXS Attacks. 
 
 Attack 1:
-- The file `keylogger.html` is a simple javascript keylogger
+- `keylogger.html` is a simple javascript keylogger
 
 Attack 2:
 
-- The File `xss-in-practice.php` is for the victim.
-- The File `xd.php` is the script where `xss-in-practice.php` posts the passwords to
+- `xss-in-practice.php` is for the victim.
+- `xd.php` is the script where `xss-in-practice.php` posts the passwords to
 - The "stolen" passwords are stored inside `passwords.txt` by `xd.php`
 
 [View Repository](https://github.com/devlukas/m183/tree/master/xss-in-practice)
@@ -31,4 +31,4 @@ A Node.JS-App demonstrating Two-Factor-Authentication with OTP Tokens and QR-Cod
 
 A Node.JS-App demonstrating Single-Sign-On (SSO) with Google.
 
-[View Repository](https://github.com/devlukas/m183/tree/master/totp)
+[View Repository](https://github.com/devlukas/m183/tree/master/sso)
