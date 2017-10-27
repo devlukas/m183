@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const hbs = require('path');
 const exphbs = require('express-handlebars');
-const oauthserver = require('oauth2-server');
+const oauthserver = require('node-oauth2-server');
 
 
 const app = express();
@@ -23,7 +23,7 @@ app.oauth = oauthserver({
   });
 
 
-app.get('/', app.oauth.authorise(), function (req, res) {
+app.get('/', function (req, res) {
   res.render('index');
 });
 

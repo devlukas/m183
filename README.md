@@ -23,7 +23,7 @@ A Node.JS-App demonstrating Two-Factor-Authentication with SMS using nexmo.
 
 ## TOTP
 
-A Node.JS-App demonstrating Two-Factor-Authentication with OTP Tokens and QR-Codes using the Google Authenticater App
+A Node.JS-App demonstrating Two-Factor-Authentication with OTP Tokens and QR-Codes using the Google Authenticater App.
 
 [View Repository](https://github.com/devlukas/m183/tree/master/totp)
 
