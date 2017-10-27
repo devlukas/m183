@@ -1,0 +1,38 @@
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+<div style="width: 600px;margin: auto;margin-top: 50px;     " class="panel panel-default">
+    <div class="panel-heading">Login</div>
+    <div class="panel-body">
+        <div class="g-signin2" data-onsuccess="onSignIn"></div> 
+        <br>
+        <div class="row">
+            <div class="col-md-2"><img id="profile-picture"></div>
+            <div class="col-md-10"><pre id="profile"></pre></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        const profileElement = document.getElementById('profile');
+        profileElement.innerHTML += 'ID: ' + profile.getId();
+        profileElement.innerHTML += '\nName: ' + profile.getName();
+        profileElement.innerHTML += '\nImage URL: ' + profile.getImageUrl();
+        profileElement.innerHTML += '\nEmail: ' + profile.getEmail();
+
+        document.getElementById('profile-picture').setAttribute('src', profile.getImageUrl());
+         var id_token = googleUser.getAuthResponse().id_token;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'http://localhost:3000/oauth/token');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function() {
+            console.log('Signed in as: ' + xhr.responseText);
+        };
+        xhr.send('idtoken=' + id_token);
+    }   
+    function onSignOn(googleUser){
+       
+    }
+</script>

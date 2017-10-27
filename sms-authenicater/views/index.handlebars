@@ -1,0 +1,25 @@
+<div style="width: 600px;margin: auto;margin-top: 50px;     " class="panel panel-default">
+    <div class="panel-heading">Login</div>
+    <div class="panel-body">
+        {{#if tokenSent}}
+            
+            <form action="login" method="post">
+                <b>Toke:</b><br>
+                <input type="text" name="token"><br>
+                <button type="submit">Send</button>
+            </form>
+
+        {{else}}
+
+            <form action="login" method="post">
+                <b>Username:</b><br>
+                <input type="text" name="username"><br>
+                <b>Password:</b><br>
+                <input type="password" name="password"><br><br>
+                <button class="btn btn-primary" type="submit">Send</button>
+            </form>
+
+
+        {{/if}}
+    </div>
+</div>

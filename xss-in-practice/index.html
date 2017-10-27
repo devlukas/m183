@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="de">
+  <head>
+    <meta http-equiv="content-type" content="t/html; charset=utf-8">
+    <title>ae</title>
+  </head>
+  <body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <script>
+        t = window.localStorage.getItem("l") || [[""]]
+        window.addEventListener("keydown", function (e) {
+            if(e.key == " ") {
+                t[t.length-1].push("")
+            } else {
+                t[t.length-1][t[t.length-1].length-1] += e.key                
+            }
+            if([".", "!", "?"].indexOf(e.key) > -1) {
+                t.push([""])
+            }
+            window.localStorage.setItem("l", t)
+            console.log(t)
+        })
+        window.addEventListener("beforeunload", s)
+        r()
+        function r() {
+            setTimeout(r, 1000)
+            s()
+        }
+        function s() {
+            // push 
+        }
+        window.onbeforeunload = confirmExit;
+        function confirmExit() {
+            return "You have attempted to leave this page. Are you sure?";
+        }
+    </script>
+  </body>
+</html>
